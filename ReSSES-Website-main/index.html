@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>ReSESS</title>
+
+  <!--Navbar/Header and the Index page was contributed by Sean Valis--> 
+
+
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!--favicon-->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYF9MB7RZ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SYF9MB7RZ2')
+</script>
+
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" >
+
+
+<div class="header" >
+  <div class="container">
+
+     <div class="row" style="">
+
+        <div class="col-sm-7 text-left">
+                <span class="top-phone" style="margin-right: 10px; color: white;">
+                  <i class="fa fa-phone" style="color: white;"></i>718-260-5410</span>
+                  <a class="top-email" href="mailto:resess@citytech.cuny.edu">
+                    <i class="fa fa-envelope-o"></i>Email Us</a>
+        </div>
+                    <div class="col-sm-5 "style="text-align: right">
+
+            <a href="https://linkedin.com"><i class="fa fa-fw fa-linkedin"></i></a>
+
+            <a href="https://facebook.com"><i class="fa fa-fw fa-facebook"></i></a>
+
+            <a href="https://twitter.com"><i class="fa fa-fw fa-twitter"></i></a>
+
+                    </div>
+
+    </div>
+
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+<div class="container fluid">
+
+<!-- Collapse button -->
+<button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+
+ <a href="index.html" style="text-decoration: none;">
+    <p class="navbar-brand" style="font-size: 32px;">
+      ReSESS
+    </p>
+
+
+  </a>
+<!--
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <em class="hamburger"></em>
+</button>
+-->
+    <div class="collapse navbar-collapse" id="myNavbar" >
+      <ul class="nav navbar-nav mr-auto navbar ">
+        <li class="nav-item"><a class="navbar-brand" href="index.html#about">About Us</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="index.html#contact">Contact</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="team.html">Team</a></li>
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Research
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #466d1d;" >
+            <li><a class="dropdown-item" href="publications.html">Publications</a></li>
+            <li><a class="dropdown-item" href="projects.html">Projects</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="grants.html">Grants</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</div>
+</nav>
+
+<div class="jumbotron">
+  <div class="jumbo-text">
+    <h1>ReSESS</h1>
+    <p>The Center for Remote Sensing and Earth System Sciences</p>
+  </div>
+
+  <div class="sidenav">
+    <div class="sticky-top" style="background-color: #466d1d; color: white;">
+  <center>  <h1>NEWS</h1> </center>
+</div>
+<center>
+<a class="twitter-timeline" href="https://twitter.com/USGS?ref_src=twsrc%5Etfw">Tweets by USGS</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+  </div>
+</div>
+
+
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About ReSESS</h2><br>
+    <h4>Located at the campus of New York City College of Technology in Brooklyn. ReSESS is using data from satellites to record changes in ecologies, and environments. With help and support from numerous organizations from across the globe, we aim to make environmental issues a thing of the past.</h4>
+    <p>ReSESS at the New York City College of Technology (City Tech) started on December 9, 2011 through an agreement with the CUNY CREST Institute and under the leadership of Dr. Reginald Blake. Today, ReSESS is Co-Directed by Dr. Blake and Dr. Hamidreza Norouzi. The Center plays a critical role not only in helping to replenish this nation’s geoscience workforce, but also in establishing a vibrant, faculty-student centered research culture at City Tech. The center focuses on the formal, integrated, interdisciplinary, and comprehensive implementation of Earth Systems Science and Remote Sensing technologies and applications at City Tech. This single-minded mission helps to foster an institutional research culture change by creating, sustaining, and promoting collaborative research that coalesces around the relatively new and exciting study of the Earth and its environment via satellite and ground-based Remote Sensing. The Center’s mission is anchored in course offerings, research activities, exposure trips, seminars, internships, conferences, and citizen science to engage and to stimulate the curiosity of City Tech’s faculty and students to the varied applications of Remote Sensing to the cryosphere, the biosphere, the lithosphere, the atmosphere, and the hydrosphere.With ReSESS’s mission in place, the City Tech will, therefore, soon become a leader in producing the next generation of scientists and engineers with unique expertise in satellite and ground-based remote sensing and their applications to geophysics. The Center’s research activities have produced peer reviewed publications and the garnering of educational and research grants that are being used to pursue and to promote remote sensing studies.</p>
+      <br><a href="#contact" class="btn btn-default btn-lg" >Get in Touch</a>
+    <br>
+    <br>
+    </div>
+    <div class="col-sm-4">
+      <img src="https://blogs.fu-berlin.de/reseda/files/2018/05/landsat8.png" style="height: 7vw">
+    </div>
+  </div>
+
+<div class="container-fluid bg-grey">
+ <h2>Special thanks to:</h2>
+  <div id="myCarousel" class="carousel slide " data-bs-ride="carousel">
+    
+<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <span class="visually-hidden">Next</span>
+</button>
+  </div>
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/USGS_logo_green.svg/2560px-USGS_logo_green.svg.png"  class="d-block w-100 carousel_pics" alt="..." >
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.celt.iastate.edu/wp-content/uploads/2021/05/MATLAB-logo.png"   class="d-block w-100 center carousel_pics" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://robinhoodorg-production.s3.amazonaws.com/uploads/2016/10/generic_rh.jpg"   class="d-block w-100 center carousel_pics" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+</div>
+</div>
+
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center" style="margin-bottom: 2rem;">
+  <h2>In Association with:</h2>
+  <br>
+  <div class="row " data-aos="fade-up">
+    <div class="col-sm-4">
+    <a href="https://www.nsf.gov/">
+      <img src="https://www.nsf.gov/pubs/1999/nsf99113/image15.gif" style="height: 100px;">
+      </a>
+    </div>
+
+     <div class="col-sm-4">
+  <a href="https://www.bnl.gov/world/">
+      <img src="https://www.bnl.gov/assets/global/images/bnl-logo-2021.svg" style="height:100px;">
+  </a>
+    </div>
+   <div class="col-sm-4">
+    <a href="https://rhicenter.org/red-hook-farms/the-farms/">
+      <img src="https://res.cloudinary.com/rhi/image/upload/c_scale,w_600/v1/wp/2019/11/RedhookFarms.png" style="height: 100px;">
+      </a>
+    </div>
+  </div>
+  <br><br>
+  <div class="row " data-aos="fade-up">
+    <div class="col-sm-4" >
+  <a href="https://www.cessrst.org/">
+      <img src="https://www.cessrst.org/favicon.png" style="height:100px;">
+  </a>
+    </div>
+    <div class="col-sm-4">
+  <a href="https://crest.cuny.edu/">
+      <img src="https://crest.cuny.edu/wp-content/uploads/2019/06/cropped-cropped-cuny_crest-1.png" style="height:100px;">
+      <br>
+    </a>
+    </div>
+    <div class="col-sm-4">
+  <a href="https://www.citytech.cuny.edu/">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/30/City_Tech.png" style="height:100px;">
+      <br>
+    </a>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">Contact Us</h2>
+  <div class="row">
+    <div class="text-center">
+      <p>Contact us and we'll get back to you as soon as possible.</p>
+      <div class="contact-pictures">
+      <div class="picture">
+        <a href="mailto:resess@citytech.cuny.edu"><i class="fa fa-5x fa-envelope" aria-hidden="true"></i></a>
+        <p class="contact-desc"><a href="mailto:resess@citytech.cuny.edu">Email Us Here</a></p>
+      </div>
+      <div class="picture">
+        <i class="fa fa-5x fa-mobile" aria-hidden="true"></i>
+        <p class="contact-desc">718-260-5410</p>
+      </div>
+      <div class="picture">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <p class="contact-desc">Brooklyn, NY</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--thank you mdbootstrap-->
+<div id="wrap">
+  <footer class="text-center text-lg-start absolute-bottom" style="background-color: #466d1d; width: 100%">
+    <div class="container d-flex justify-content-center py-5">
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: rgba(0, 0, 0, 0.2); border: none;">
+        <i class="fa fa-youtube-play"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: rgba(0, 0, 0, 0.2); border: none;">
+        <i class="fa fa-instagram"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: rgba(0, 0, 0, 0.2); border: none;">
+        <i class="fa fa-twitter"></i>
+      </button>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://resessnyc.com/">ReSESS</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+</script>
+
+<script>
+  AOS.init();
+</script>
+
+
+
+</body>
+
+</html>
+

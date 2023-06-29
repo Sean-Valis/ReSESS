@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>ReSESS</title>
+
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  <!-- Bootstrap 4
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+-->
+
+  <!-- Bootstrap 3
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+-->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!--favicon-->
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+<!--
+  <style>
+  #map {
+    /* configure the size of the map */
+    width: 93vw;
+    height: 500px;
+    margin: auto;
+    padding: 10px;
+  }
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    margin: 0; padding: 0;
+    color: #818181;
+	height: auto;
+	font: 400 15px Lato, sans-serif;
+	width: 100%;
+
+  }
+
+
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .jumbotron {
+     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Landsat.jpg");
+
+  /* Set a specific height */
+  height: 100vw;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+
+
+  }
+  .jumbo-text{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+
+
+    font-family: Helvetica, sans-serif;
+  }
+  .parallax{
+	   /* The image used */
+  background-image: url("city_tech.jpg");
+
+
+  height: 75vw;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .footer{
+	height:50px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #466d1d;
+    font-size: 50px;
+  }
+  .logo {
+    color: #466d1d;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #466d1d;
+  }
+  .carousel-indicators li {
+    border-color: #466d1d;
+  }
+  .carousel-indicators li.active {
+    background-color: #466d1d;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #466d1d;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #466d1d;
+    background-color: #fff !important;
+    color: #466d1d;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #466d1d !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+    width: 100%;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #466d1d;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #466d1d;
+    z-index: 9999;
+    border: 0;
+    border-radius: 0;
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+	font: 400 15px Lato, sans-serif;
+
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #466d1d !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #466d1d;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  .top-header{
+
+
+  }
+  .header{
+    background: white;
+     color: black;
+     width: 100%;
+     margin: 0;
+     top: 0;
+
+  }
+
+
+    .sticky-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1020
+
+    }
+
+    .navbar-brand,
+    .navbar-brand a{
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+      padding: none;
+    }
+
+	.sidenav{
+	height: 100vw; /* Full-height: remove this if you want "auto" height */
+	width: 18vw; /* Set the width of the sidebar */
+	position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+	z-index: 2;
+	background-color: #466d1d;
+	border-style: solid;
+	border-color: white;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	font: 400 15px Lato, sans-serif;
+	right: 0;
+}
+
+.carousel_pics{
+  height: 300px;
+  width: 700px;
+}
+
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+#wrap {
+   min-height: 100%;
+   height: auto !important;
+   height: 100%;
+   margin: 0 auto -60px;
+   width: 100%;
+}
+
+
+
+
+
+
+  </style>
+-->
+
+
+</head>
+
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYF9MB7RZ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SYF9MB7RZ2');
+</script>
+
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" >
+
+
+  
+<div class="header" >
+  <div class="container">
+
+     <div class="row" style="">
+
+        <div class="col-sm-7 text-left">
+                <span class="top-phone" style="margin-right: 10px; color: white;">
+                  <i class="fa fa-phone" ></i>718-260-5410</span>
+                  <a class="top-email" href="mailto:resess@citytech.cuny.edu">
+                    <i class="fa fa-envelope-o"></i>Email Us</a>
+        </div>
+                    <div class="col-sm-5 "style="text-align: right">
+
+            <a href="https://linkedin.com"><i class="fa fa-fw fa-linkedin"></i></a>
+
+            <a href="https://facebook.com"><i class="fa fa-fw fa-facebook"></i></a>
+
+            <a href="https://twitter.com"><i class="fa fa-fw fa-twitter"></i></a>
+
+                    </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!--NAV CODE-->
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+<div class="container fluid"
+<!-- Collapse button -->
+<button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+
+ <a href="index.html" style="text-decoration: none;">
+    <p class="navbar-brand" style="font-size: 32px;">
+      ReSESS
+    </p>
+  </a>
+
+    <div class="collapse navbar-collapse" id="myNavbar" >
+      <ul class="nav navbar-nav mr-auto navbar ">
+        <li class="nav-item"><a class="navbar-brand" href="index.html#about">About Us</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="index.html#contact">Contact</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="team.html">Team</a></li>
+        <li class="nav-item dropdown" >
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Research
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #466d1d;" >
+            <li><a class="dropdown-item" href="publications.html">Publications</a></li>
+            <li><a class="dropdown-item" href="projects.html">Projects</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="grants.html">Grants</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</div>
+</nav>
+<!--Finish Nav Code--->
+
+<!--Start of title-->
+  <div id="boxes"> 
+    <div class="box-1">
+        <div class="centered">
+        <h2>Publications</h2>
+        </div>
+    </div>
+  </div>
+<!-- Finish of title and background-->
+
+
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Publications</h2><br>
+  <h4>Research Posters we've created.</h4>
+  <div class="row text-center " >
+    <div class="col-sm-6">
+      <div class="thumbnail">
+       <a href="AMS_poster.pdf"> <img src="AMS_poster.jpg" alt="Urban" width="400" height="300"></a>
+        <p><b>Urban Heat Island</b></p>
+        <p style="padding:10px;">Urban Heat Islands (UHI) are one of the leading environmental issues in densely populated urban areas. Accurate characterization of the surface energy balance is required to better predict the
+dynamics of the UHI and its impact on extreme heat events. However, a better complete knowledge of urban surface energy balance is needed to accurately understand climate processes
+revolving around high-density urban environments. The goal of this study, using satellite data, is to enhance the understanding the urban surface energy budget and observe land surface
+temperatures. Using a linear regression model, GOES-16 LST data, which has a spatial resolution of 2km and a temporal resolution of 5 minutes, was combined with Landsat 8 LST data,
+which has a spatial resolution of 30m and a temporal resolution of 16 days to get a high spatio-temporal resolution (30m every 5 minutes) LST product. The downscaled estimates showed a
+reasonable agreement (-0.09 to 3.30 K) when they were validated against independent Landsat images.</p>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="thumbnail">
+	  <a href="Lake_Poster_Fall_2021.pdf">
+        <img src="Lake_Poster.jpg" alt="Lake Project" width="400" height="300"></a>
+        <p><b>GLOBAL LAKES SURFACE TEMPERATURE VARIABILITIES USING SATELLITES</b></p>
+        <p style="padding:10px;">Anthropogenic climate change has made a noticeable
+impact on our worldwide ecosystem, often leading to
+cascading effects that impact human lives. Although lakes
+consist of a small percentage of global water bodies, they
+nevertheless have significant influence on their surrounding
+environment, impacting the lives around them. For this
+research, 519 lakes from all over the world were studied
+using daily observations from the Moderate Resolution
+Imaging Spectroradiometer (MODIS) from the NASA
+website. The Lake Surface Water Temperature (LSWT)
+was found to be an indicator of climate change. In the
+study, LSWT was compared with Land Surface
+Temperatures and related factors. Results were analyzed
+using MATLAB . Approximately 54.24% of the lakes studied
+were shown to be warming, while 40.03% were shown to
+be cooling; in addition, 68.44% of the lakes were found to
+be shrinking; while 24.85% were found to be growing.
+Continued studies of lake surface temperature trends of
+global lakes are imperative for communities that depend on
+them for survival, as well as the entirety of Earth.</p>
+      </div>
+    </div>
+
+  </div><br>
+</div>
+<!--Finish container Portfolio-->
+
+<!--thank you mdbootstrap-->
+<div id="wrap">
+  <footer class="text-center text-lg-start absolute-bottom" style="background-color: #466d1d; width: 100%">
+    <div class="container d-flex justify-content-center py-5">
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: rgba(0, 0, 0, 0.2); border: none;">
+        <i class="fa fa-youtube-play"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: rgba(0, 0, 0, 0.2); border: none;">
+        <i class="fa fa-instagram"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: rgba(0, 0, 0, 0.2); border: none;">
+        <i class="fa fa-twitter"></i>
+      </button>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://resessnyc.com/">ReSESS</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+<!-- End of .container -->
+
+</body>
+</html>
